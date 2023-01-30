@@ -1,7 +1,3 @@
-//import { startCount ,timedCount} from "timer.js";
-
-// Pong Game
-// Developed by Carlos Yanez
 
 //let timeout;
 let counter = 0;
@@ -74,7 +70,7 @@ console.log("main func");
 
 function Main()
 {
-	//timeout = setTimeout(alertFunc, 3000);
+
 	
 	console.log("main func");
 
@@ -298,9 +294,7 @@ function startGame(e)
 	Ticker.addListener(tkr, false);
 	tkr.tick = update;    console.log("start game func");
 
-	// if (!timer_on) {
-	// 	timer_on = 1;
-	//   }
+
 }
 
 /* Reset */
@@ -396,8 +390,7 @@ function update()
 	if(playerScore.text == '10')
 	{
 		alert('win');
-		// clearTimeout(timeout);
-		// timer_on = 0;
+
 	}
 	
 	/* Check for Game Over */
@@ -405,36 +398,30 @@ function update()
 	if(cpuScore.text == '10')
 	{
 		alert('lose');
-		// clearTimeout(timeout);
-		// timer_on = 0;
+
 	}
 
-// 	document.getElementById("demo").value = counter;
-// 	if (counter < 10) { counter++;}
-//    else{ stopCount();     alert('timeup');}
-//    timeout = setTimeout(timedCount, 1000);
+
 }
 
 
-// function alertFunc() {
-//     alert('timeup');
-// }
+
 
 
 function timedCount() {
-	//time.text = parseInt(time.text + 1);
   
    if ( parseInt(time.text) > 0) {time.text = parseInt(time.text - 1);}
   else{ 
 	
 	clearTimeout(timeout);
 	alert('timeup');
-	parseInt(time.text)=60; 
+
+	parseInt(time.text)=60; 		//to avoid loop of timeout
 	
 	reset();
 	timer_on = 0;
  
-	console.log("loop");
+	//console.log("loop");
 
 }
   timeout = setTimeout(timedCount, 1000);
