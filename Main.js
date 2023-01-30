@@ -1,3 +1,5 @@
+import { startCount ,timedCount} from "timer.js";
+
 // Pong Game
 // Developed by Carlos Yanez
 
@@ -55,10 +57,16 @@ var ySpeed = 5;
 var gfxLoaded = 0;
 var tkr = new Object;
 
+
+
+
+
 // Main Function
 
 function Main()
 {
+
+
 	/* Link Canvas */
 	
 	canvas = document.getElementById('Pong');
@@ -120,6 +128,8 @@ function Main()
 	
 	Ticker.setFPS(30);
 	Ticker.addListener(stage);
+
+
 }
 
 function loadGfx(e)
@@ -174,6 +184,8 @@ function showCredits()
 	stage.update();
 	Tween.get(credits).to({x:0}, 300);
 	credits.onPress = hideCredits;
+
+	console.log("show cred func");
 }
 
 // Hide Credits
@@ -235,7 +247,8 @@ function addGameView()
 	
 	// Start Listener 
 	
-	bg.onPress = startGame;
+	bg.onPress = startGame, 	startCount;
+	console.log("start press func");
 }
 
 // Player Movement
@@ -255,7 +268,7 @@ function startGame(e)
 	stage.onMouseMove = movePaddle;
 	
 	Ticker.addListener(tkr, false);
-	tkr.tick = update;
+	tkr.tick = update;    console.log("start game func");
 }
 
 /* Reset */
@@ -269,7 +282,7 @@ function reset()
 	
 	stage.onMouseMove = null;
 	Ticker.removeListener(tkr);
-	bg.onPress = startGame;
+	bg.onPress = startGame , 	startCount;;
 }
 
 // Update Function
