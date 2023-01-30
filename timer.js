@@ -1,26 +1,53 @@
-let counter = 0;
-let timeout;
-let timer_on = 0;
 
-function timedCount() {
-  document.getElementById("demo").value = counter;
-   if (counter < 10) { counter++;}
-  else{ stopCount();}
-  timeout = setTimeout(timedCount, 1000);
-}
+// let timeout;
 
-window.startCount = function startCount() {
+// function myFunction() {
+//   timeout = setTimeout(alertFunc, 3000);
+// }
 
-  if (!timer_on) {
-    timer_on = 1;
-    timedCount();
-  }
-}
+// function alertFunc() {
+//     alert('time is up');
+// }
 
-function stopCount() {
-  clearTimeout(timeout);
-  timer_on = 0;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let counter = 0;
+// let timeout;
+// let timer_on = 0;
+
+// function timedCount() {
+//   document.getElementById("demo").value = counter;
+//    if (counter < 10) { counter++;}
+//   else{ stopCount();}
+//   timeout = setTimeout(timedCount, 1000);
+// }
+
+// function startCount() {
+
+//     console.log("start count func");
+
+//   if (!timer_on) {
+//     timer_on = 1;
+//     timedCount();
+//   }
+// }
+
+// function stopCount() {
+//   clearTimeout(timeout);
+//   timer_on = 0;
+// }
 
 
 

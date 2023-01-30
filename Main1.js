@@ -56,7 +56,6 @@ var timeup;
 
 var playerScore;
 var cpuScore;
-var timer;
 var time;
 
 // Variables
@@ -260,17 +259,12 @@ function addGameView()
 	cpuScore.x = 262;
 	cpuScore.y = 20;
 
-	timer = new Text('Timer:', 'bold 20px Arial', '#A3FF24');
-	timer.maxWidth = 1000;	//fix for Chrome 17
-	timer.x = 50;
-	timer.y = 20;
-
-	time = new Text('60', 'bold 20px Arial', '#A3FF24');
+	time = new Text('5', 'bold 20px Arial', '#A3FF24');
 	time.maxWidth = 1000;	//fix for Chrome 17
-	time.x = 120;
+	time.x = 162;
 	time.y = 20;
 	
-	stage.addChild(playerScore, cpuScore, timer, time, player, cpu, ball);
+	stage.addChild(playerScore, cpuScore, time, player, cpu, ball);
 	stage.update();
 	
 	// Start Listener 
@@ -415,7 +409,6 @@ function update()
 //    timeout = setTimeout(timedCount, 1000);
 }
 
-
 // function alertFunc() {
 //     alert('timeup');
 // }
@@ -424,23 +417,16 @@ function update()
 function timedCount() {
 	//time.text = parseInt(time.text + 1);
   
-   if ( parseInt(time.text) > 0) {time.text = parseInt(time.text - 1);}
-  else{ 
-	
-	clearTimeout(timeout);
-	alert('timeup');
-	parseInt(time.text)=60; 
-	
-	reset();
-	timer_on = 0;
- 
-	console.log("loop");
-
-}
+   if ( parseInt(time.text) > 1) {time.text = parseInt(time.text - 1);}
+  else{ stopCount();}
   timeout = setTimeout(timedCount, 1000);
 }
 
 function stopCount() {
+  clearTimeout(timeout); 
+   alert('timeup');
+reset();
+  timer_on = 0;
 
 }
 
