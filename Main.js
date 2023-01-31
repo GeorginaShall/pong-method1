@@ -79,12 +79,7 @@ function Main()
 	canvas = document.getElementById('Pong');
   	stage = new Stage(canvas);
 
-	  context = canvas.getContext('2d');
 
-	  // Rotates the canvas 90 degrees
-	  context.rotate(90 * (Math.PI / 180));
-
-	  
 	//   console.log(window.canvas.offsetWidth);
 	//   console.log(window.canvas.offsetHeight);
 
