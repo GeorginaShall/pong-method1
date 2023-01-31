@@ -66,6 +66,7 @@ var tkr = new Object;
 console.log("main func");
 
 
+
 // Main Function
 
 function Main()
@@ -79,14 +80,7 @@ function Main()
 	canvas = document.getElementById('Pong');
   	stage = new Stage(canvas);
 
-
-	//   console.log(window.canvas.offsetWidth);
-	//   console.log(window.canvas.offsetHeight);
-
-	  
-	// 	console.log(window.innerHeight);
-	// 	console.log(window.innerWidth);
-
+  		
   	stage.mouseEventsEnabled = true;
   	
   	/* Sound */

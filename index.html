@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 	<head>
 		<title>Pong</title>
 		
@@ -9,33 +9,54 @@
 		<script src="sound.js"></script>
 		
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			function resize_canvas(){
 				canvas = document.getElementById("Pong");
 				if (canvas.width  < window.innerWidth)
 				{
 					canvas.width  = window.innerWidth;
+					console.log(window.innerWidth);
 				}
 	
 				if (canvas.height < window.innerHeight)
 				{
 					canvas.height = window.innerHeight;
+					console.log(window.innerHeight);
 				}
-			}
-		</script>
+			} onresize="resize_canvas()" 
+		</script> -->
 		<script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
-		<script>jQuery.noConflict();</script>
+		<!-- <script>jQuery.noConflict();</script> -->
 		<script src="Main.js"></script>
 
 	</head>
-	<body onload="Main();" onresize="resize_canvas()"  style = "text-align:center;">
+	<body onload="Main();"  style = "text-align:center; background-color: red ;  width:  100%;
+	height: 200%;
+	margin: 0;;">
 		
-		<canvas id="Pong" width="480" height="320">
+		<!-- <div style=" width: 150vh; height:80vh; 
+		background-color: yellow;     display: inline-block;
+		line-height: 0;"> -->
+		<canvas id="Pong" width="480" height="320" >
 
 			
 		</canvas>
+	<!-- </div> -->
 
 	</body>
+
+	<script>
+
+$("#Pong").bind("wheel mousewheel", function(e) {e.preventDefault()});
+
+	document.getElementById( "Pong" ).onwheel = function(event){
+		event.preventDefault();
+	};
+	
+	document.getElementById( "Pong" ).onmousewheel = function(event){
+		event.preventDefault();
+	};</script>
 </html>
 
