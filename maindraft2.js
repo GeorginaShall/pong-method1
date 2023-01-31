@@ -9,6 +9,7 @@ let timer_on = 0;
 var canvas;
 var stage;
 
+var stagetch;
 
 // Graphics
 //[Background]
@@ -80,6 +81,8 @@ function Main()
 	canvas = document.getElementById('Pong');
   	stage = new Stage(canvas);
 
+	  stagetch = new createjs.Stage("Pong");
+	  createjs.Touch.enable(stagetch);
   		
   	stage.mouseEventsEnabled = true;
   	
@@ -141,6 +144,8 @@ function Main()
 	
 	Ticker.setFPS(30);
 	Ticker.addListener(stage);
+	Ticker.addListener(stagetch);
+
 
 }
 
