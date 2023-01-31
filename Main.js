@@ -78,7 +78,10 @@ function Main()
 	
 	canvas = document.getElementById('Pong');
   	stage = new Stage(canvas);
-  		
+
+	  createjs.Touch.enable(stage);
+	  console.log("Enable touch: "+createjs.Touch.enable(stage) );  // returns false
+
   	stage.mouseEventsEnabled = true;
   	
   	/* Sound */
@@ -289,8 +292,10 @@ function movePaddle(e)
 function startGame(e)
 {
 	bg.onPress = null;
-	stage.onMouseMove = movePaddle;
-	
+	//stage.onMouseMove = movePaddle;
+
+	stage.onpressmove = movePaddle;
+
 	Ticker.addListener(tkr, false);
 	tkr.tick = update;    console.log("start game func");
 
