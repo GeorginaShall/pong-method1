@@ -79,6 +79,7 @@ function Main()
 	canvas = document.getElementById('Pong');
   	stage = new Stage(canvas);
 
+	
 
 	//   console.log(window.canvas.offsetWidth);
 	//   console.log(window.canvas.offsetHeight);
