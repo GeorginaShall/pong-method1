@@ -277,19 +277,39 @@ function addGameView()
 
 // Player Movement
 
+// Player Movement
+
+function selectPaddle(e)
+{
+	stage.onMouseMove = movePaddle;
+	console.log("select");
+}
 function movePaddle(e)
 {
 	// Mouse Movement
 	
 	player.y = e.stageY;
+	console.log("move");
+	stage.onMouseUp= stopPaddle;
+}
+
+function stopPaddle(e)
+{	
+	player.y = player.y ;
+
+	stage.onMouseMove = null;
+
+	console.log("stop");
+
 }
 
 // Start Game Function
 
+
 function startGame(e)
 {
 	bg.onPress = null;
-	stage.onMouseMove = movePaddle;
+	stage.onMouseDown = selectPaddle;
 	
 	Ticker.addListener(tkr, false);
 	tkr.tick = update;    console.log("start game func");
