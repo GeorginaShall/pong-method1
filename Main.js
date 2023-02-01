@@ -79,16 +79,6 @@ function Main()
 	
 	canvas = document.getElementById('Pong');
 
-var ctx = canvas.getContext('2d');
-window.addEventListener('resize', function() {
-  canvas.style.width = window.innerWidth + 'px';
-  canvas.style.height = window.innerHeight + 'px';
-  canvas.width = window.innerWidth * window.devicePixelRatio;
-  canvas.height = window.innerHeight * window.devicePixelRatio;
-  ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-});
-
-console.log(canvas.width);
 
 // 	context = canvas.getContext(‘webgl’);
 // 	console.log(WebGLRenderingContext.isContextLost());
