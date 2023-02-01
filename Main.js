@@ -78,12 +78,13 @@ function Main()
 	/* Link Canvas */
 	
 	canvas = document.getElementById('Pong');
-  	stage = new Stage(canvas);
+
 
 	context = canvas.getContext(‘webgl’);
 context.canvas.width = window.innerWidth;
 context.canvas.height = window.innerHeight;
 
+  	stage = new Stage(canvas);
 	//   console.log(window.canvas.offsetWidth);
 	//   console.log(window.canvas.offsetHeight);
 
