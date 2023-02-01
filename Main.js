@@ -80,9 +80,9 @@ function Main()
 	canvas = document.getElementById('Pong');
 
 
-	context = canvas.getContext(‘webgl’);
-context.canvas.width = window.innerWidth;
-context.canvas.height = window.innerHeight;
+// 	context = canvas.getContext(‘webgl’);
+// context.canvas.width = window.innerWidth;
+// context.canvas.height = window.innerHeight;
 
   	stage = new Stage(canvas);
 	//   console.log(window.canvas.offsetWidth);
