@@ -70,7 +70,9 @@ console.log("main func");
 // Main Function
 
 function Main()
-{	
+{
+
+	
 	console.log("main func");
 
 	/* Link Canvas */
@@ -78,7 +80,6 @@ function Main()
 	canvas = document.getElementById('Pong');
 
 
-	
 // 	context = canvas.getContext(‘webgl’);
 // 	console.log(WebGLRenderingContext.isContextLost());
 // context.canvas.width = window.innerWidth;
