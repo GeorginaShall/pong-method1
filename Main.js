@@ -8,6 +8,7 @@ let timer_on = 0;
 
 var canvas;
 var stage;
+var context;
 
 
 // Graphics
@@ -79,7 +80,9 @@ function Main()
 	canvas = document.getElementById('Pong');
   	stage = new Stage(canvas);
 
-	
+	context = canvas.getContext(‘webgl’);
+context.canvas.width = window.innerWidth;
+context.canvas.height = window.innerHeight;
 
 	//   console.log(window.canvas.offsetWidth);
 	//   console.log(window.canvas.offsetHeight);
