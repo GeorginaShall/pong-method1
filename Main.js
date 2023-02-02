@@ -72,7 +72,7 @@ console.log("main func");
 function Main()
 {
 
-	
+//	ctx.imageSmoothingEnabled = true;
 	console.log("main func");
 
 	/* Link Canvas */
