@@ -51,24 +51,36 @@
 		<script src="Main.js"></script>
 
 	</head>
-	<body onload="Main();"  style = "text-align:center; background-color: red ;  
+	<body onload="Main();" 
+ 
+	 style = "text-align:center; background-color: red ;  
 	width:  100%;
 	height: 100%;
 	margin: 0; 
 	position:fixed;
 	line-height: 0;
 		overflow: hidden; 
-	">
+	"><!-- -->
 		<!-- width: 150vh; height:80vh;  -->
-		 <!-- <div 
+		 
+		<div id="gameArea"	style="
+		position: absolute;
+		left:     0%;
+		top:      0%;		
+		background-color: yellow;     
+
+	  "
+		>
+		<!-- 
 		 style=" text-align:center; 
-		width: 100%; height:100%;  
+		
 		background-color: yellow;     
 		line-height: 0;
 		overflow: hidden; ">  -->
 		
-		<canvas id="Pong" width="480" height="320" 
-		style="
+		<canvas id="Pong" width="480" height="320" style="  width: 100%;
+		height: 100%;">
+		<!-- style="
 	background-color: green;  	
 		display: block;
             position: absolute;
@@ -77,10 +89,10 @@
             right: 0;
             bottom: 0;
             width: 100%;
-            height: 100%;">
+            height: 100%;" -->
 
 			
-		</canvas>
+		</canvas></div>
 	<!-- </div> -->
 
 	</body>
@@ -96,6 +108,35 @@ $("#Pong").bind("wheel mousewheel", function(e) {e.preventDefault()});
 	// document.getElementById( "Pong" ).onmousewheel = function(event){
 	// 	event.preventDefault();
 	// };
+
+	function resizeGame() {
+    var gameArea = document.getElementById('gameArea');
+    var widthToHeight = 6 / 4;
+    var newWidth = window.innerWidth;
+    var newHeight = window.innerHeight;
+    var newWidthToHeight = newWidth / newHeight;
+    
+    if (newWidthToHeight > widthToHeight) {
+        newWidth = newHeight * widthToHeight;
+        gameArea.style.height = newHeight + 'px';
+        gameArea.style.width = newWidth + 'px';
+    } else {
+        newHeight = newWidth / widthToHeight;
+        gameArea.style.width = newWidth + 'px';
+        gameArea.style.height = newHeight + 'px';
+    }
+    
+    // gameArea.style.marginTop = (-newHeight / 2) + '%';
+    // gameArea.style.marginLeft = (-newWidth / 2) + '%';
+    
+    var gameCanvas = document.getElementById('Pong');
+    gameCanvas.width = newWidth;
+    gameCanvas.height = newHeight;
+}
+
+
+window.addEventListener('resize', resizeGame, false);
+window.addEventListener('orientationchange', resizeGame, false);
 	</script>
 </html>
 
